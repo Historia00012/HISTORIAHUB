@@ -1,0 +1,62 @@
+function autoquest()
+       _G.quest = nil
+       _G.mon = nil
+    if game:GetService("Players").LocalPlayer.PlayerStats.Level.Value >= 10 and game:GetService("Players").LocalPlayer.PlayerStats.Level.Value <= 15 then
+     _G.quest = "BanditClick"
+    _G.mon = "Bandit [Lv:5]"
+
+    elseif game:GetService("Players").LocalPlayer.PlayerStats.Level.Value >= 15 and game:GetService("Players").LocalPlayer.PlayerStats.Level.Value <= 30 then
+    
+        _G.quest = "PiratesClick"
+        _G.mon = "Pirates [Lv:15"
+
+
+    elseif game:GetService("Players").LocalPlayer.PlayerStats.Level.Value >= 30 and game:GetService("Players").LocalPlayer.PlayerStats.Level.Value <= 50 then
+
+
+    _G.quest = "BagyPirates"
+    _G.mon = "BagyPirates"
+elseif game:GetService("Players").LocalPlayer.PlayerStats.Level.Value >= 0 and game:GetService("Players").LocalPlayer.PlayerStats.Level.Value <= 50 then 
+        _G.quest = "TroopClick"
+        _G.mon = "Revolutionary Troop [Lv:50]"
+
+
+for i,v in pairs(game:GetService("Workspace"):GetDescendants()) do
+    if v.Name == _G.quest then
+        fireclickdetector(v.ClickDetector)
+    end
+end
+end
+end
+    
+
+
+
+    _G.autofarm = false ---change this to true to activate
+
+    
+
+function autofarm()
+    
+    if game:GetService("Players").LocalPlayer.PlayerGui.QuestGui.Enabled == false then
+        
+        autoquest()
+
+for i,v in pairs(game:GetService("Workspace"):GetDescendants()) do
+    if v.Name == _G.mon then
+
+        repeat wait()
+            game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame * CFrame.new(0,0,3)
+        until v.Humanoid.Health == 0 
+    end
+end
+end
+end
+spawn(function()
+while true do 
+    wait()
+if _G.autofarm then
+    autofarm()
+    end
+end
+end)
