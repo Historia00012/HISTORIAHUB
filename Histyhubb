@@ -16,4 +16,8 @@ elseif game.PlaceId == 6574375780 then
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Historia00012/HISTORIAHUB/main/gayaf"))()
 elseif game.PlaceId == 4520749081 then
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Historia00012/HISTORIAHUB/main/king%20pread"))()
+elseif game.PlaceId == 6110371797 then
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Historia00012/HISTORIAHUB/main/ProJEctNewWorld"))()
+else 
+game.Players.LocalPlayer:Kick("GAME NOT SUPPORT")
 end
