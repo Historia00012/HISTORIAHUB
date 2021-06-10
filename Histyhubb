@@ -18,7 +18,7 @@ elseif game.PlaceId == 4520749081 then
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Historia00012/HISTORIAHUB/main/king%20pread"))()
 elseif game.PlaceId == 6110371797 then
 setclipboard("https://discord.gg/FbSAUpGfMJ")
-game.Players.LocalPlayer:Kick("Patched, Wait For update Check update in discord") 
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Historia00012/HISTORIAHUB/main/ProJEctNewWorld"))()
 elseif game.PlaceId == 6688650002 then
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Historia00012/HISTORIAHUB/main/IdkRojjutsublox"))()
 else
