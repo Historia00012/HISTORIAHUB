@@ -21,6 +21,8 @@ setclipboard("https://discord.gg/FbSAUpGfMJ")
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Historia00012/HISTORIAHUB/main/ProJEctNewWorld"))()
 elseif game.PlaceId == 6688650002 then
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Historia00012/HISTORIAHUB/main/IdkRojjutsublox"))()
-else
+elseif game.PlaceId == 2809202155 then
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Historia00012/HISTORIAHUB/main/YABAAAAAAAAA"))()
+else 
 game.Players.LocalPlayer:Kick("GAME NOT SUPPORT")
 end
