@@ -23,6 +23,8 @@ elseif game.PlaceId == 6688650002 then
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Historia00012/HISTORIAHUB/main/IdkRojjutsublox"))()
 elseif game.PlaceId == 2809202155 then
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Historia00012/HISTORIAHUB/main/YABAAAAAAAAA"))()
-else 
+elseif game.PlaceId ==  5094651510 then
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Historia00012/HISTORIAHUB/main/Demonfall"))()
+else
 game.Players.LocalPlayer:Kick("GAME NOT SUPPORT")
 end
