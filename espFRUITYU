@@ -1,0 +1,59 @@
+				local function notify(types, ...)
+					if types == "Notify" then
+						require(game.ReplicatedStorage.Notification).new(...):Display()
+					end
+				end
+				_G.esp = true
+				spawn(function()
+				    while true do wait()
+				        if _G.esp then
+	for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
+	   local tool = v:FindFirstChildOfClass('Tool')
+	    if v:IsA("Part") and tool then
+							if not tool.Handle:FindFirstChild('NameEsp') then
+								local bill = Instance.new('BillboardGui',tool.Handle)
+								bill.Name = 'NameEsp'
+								bill.ExtentsOffset = Vector3.new(0, 1, 0)
+								bill.Size = UDim2.new(1,200,1,30)
+								bill.Adornee = tool.Handle
+								bill.AlwaysOnTop = true
+								local name = Instance.new('TextLabel',bill)
+								name.Font = "SourceSansBold"
+								name.FontSize = "Size14"
+								name.TextWrapped = true
+								name.Size = UDim2.new(1,0,1,0)
+								name.TextYAlignment = 'Top'
+								name.BackgroundTransparency = 1
+								name.TextStrokeTransparency = 0.5
+								name.TextColor3 = Color3.fromRGB(255, 0, 0)
+								name.Text = (tool.Name)
+												notify("Notify", "ผลไม้เกิดไอโง่")
+
+	    end
+	end
+end
+end
+end
+end)
+--ServerTimer
+--Created by Gui_HD(Nova)
+local function CreateInstance(cls,props)
+local inst = Instance.new(cls)
+for i,v in pairs(props) do
+inst[i] = v
+end
+return inst
+end
+
+local Clocker = CreateInstance('ScreenGui',{DisplayOrder=0,Enabled=true,ResetOnSpawn=true,Name='Clocker', Parent=game.CoreGui})
+local timerlabel = CreateInstance('TextLabel',{Font=Enum.Font.SourceSans,FontSize=Enum.FontSize.Size14,Text='Timer',TextColor3=Color3.new(1, 1, 1),TextScaled=false,TextSize=14,TextStrokeColor3=Color3.new(0, 0, 0),TextStrokeTransparency=1,TextTransparency=0,TextWrapped=false,TextXAlignment=Enum.TextXAlignment.Center,TextYAlignment=Enum.TextYAlignment.Center,Active=false,AnchorPoint=Vector2.new(0, 0),BackgroundColor3=Color3.new(1, 1, 1),BackgroundTransparency=1,BorderColor3=Color3.new(0.105882, 0.164706, 0.207843),BorderSizePixel=1,ClipsDescendants=false,Draggable=false,Position=UDim2.new(0, 0, 0, 0),Rotation=0,Selectable=false,Size=UDim2.new(0, 70, 0, 13),SizeConstraint=Enum.SizeConstraint.RelativeXY,Visible=true,ZIndex=1,Name='timerlabel',Parent = background})
+local timer = CreateInstance('TextLabel',{Font=Enum.Font.SourceSans,FontSize=Enum.FontSize.Size14,Text='0:0:0',TextColor3=Color3.new(1, 1, 1),TextScaled=false,TextSize=14,TextStrokeColor3=Color3.new(0, 0, 0),TextStrokeTransparency=1,TextTransparency=0,TextWrapped=false,TextXAlignment=Enum.TextXAlignment.Center,TextYAlignment=Enum.TextYAlignment.Center,Active=false,AnchorPoint=Vector2.new(0, 0),BackgroundColor3=Color3.new(1, 1, 1),BackgroundTransparency=1,BorderColor3=Color3.new(0.105882, 0.164706, 0.207843),BorderSizePixel=1,ClipsDescendants=false,Draggable=false,Position=UDim2.new(0, 0, 0.535714269, 0),Rotation=0,Selectable=false,Size=UDim2.new(0, 70, 0, 13),SizeConstraint=Enum.SizeConstraint.RelativeXY,Visible=true,ZIndex=1,Name='timer',Parent = background})
+
+while wait()do
+local scripttime=game.Workspace.DistributedGameTime
+local seconds = scripttime%60
+local minutes = math.floor(scripttime/60%60)
+local hours = math.floor(scripttime/3600)
+local tempo = string.format("%.0f:%.0f:%.0f", hours ,minutes, seconds)
+timer.Text = tempo
+end
